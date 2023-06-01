@@ -1,24 +1,24 @@
 import { BrowserRouter } from "react-router-dom";
-
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import Sound from 'react-sound';
+import { About, Contact, Education, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
 const App = () => {
   return (
     <BrowserRouter>
+    <Sound url="src/assets/sinnesloschen-beam.mp3"
+    />
       <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        {/* <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'> */}
           <Navbar />
           <Hero />
-        </div>
+        {/* </div> */}
         <About />
-        <Experience />
-        <Tech />
+        <Education />
+        {/* <Tech /> */}
         <Works />
         <Feedbacks />
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
-        </div>
+        <Contact />
+        <StarsCanvas />
       </div>
     </BrowserRouter>
   );

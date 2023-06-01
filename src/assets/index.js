@@ -1,4 +1,5 @@
-import logo from "./logo.svg";
+import logo from "./logo.png";
+import logos from "./logo.svg"; 
 import flutter from "./flutter.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -21,17 +22,20 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import ielts from "./company/ielts.png";
+import help from "./company/help.png";
+import coursera from "./company/coursera.png";
+import fpt from "./company/fpt.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import rps from "./rps.png";
+import llfoa from "./llfoa.gif";
 
 export {
   logo,
+  logos,
   flutter,
   creator,
   mobile,
@@ -52,11 +56,13 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  ielts,
+  help,
+  coursera,
+  fpt,
   carrent,
   jobit,
   tripguide,
+  rps,
+  llfoa
 };
