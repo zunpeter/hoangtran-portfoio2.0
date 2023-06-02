@@ -1,16 +1,16 @@
 import { BrowserRouter } from "react-router-dom";
-// import Sound from 'react-sound';
 import { About, Contact, Education, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+// import PlaySound from "./bgSound";
 
 const App = () => {
   return (
     <BrowserRouter>
-    {/* <Sound url="src/assets/sinnesloschen-beam.mp3" */}
-    />
+      {/* <PlaySound/> */}
+      {/* <iframe src="src/assets/sinnesloschen-beam.mp3" allow="autoplay" id="audio"></iframe> */}
       <div className='relative z-0 bg-primary'>
         {/* <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'> */}
-          <Navbar />
-          <Hero />
+        <Navbar />
+        <Hero />
         {/* </div> */}
         <About />
         <Education />
