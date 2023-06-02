@@ -33,8 +33,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_q4jk0yd',
-        'template_9ntdb44',
+        'service_y70f0f8',
+        'template_jipsi82',
 
         {
           from_name: form.name,
@@ -110,7 +110,7 @@ const Contact = () => {
               name='message'
               value={form.message}
               onChange={handleChange}
-              placeholder='What you want to say?'
+              placeholder='You can send me a link or phone number so I can reach out to you'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -122,6 +122,7 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
+        
       </motion.div>
 
       <motion.div

@@ -1,6 +1,13 @@
 import {
   mobile,
   flutter,
+  coursera,
+  ielts,
+  fpt,
+  help,
+  rps,
+  llfoa,
+  // backend,
   creator,
   web,
   javascript,
@@ -15,16 +22,14 @@ import {
   git,
   figma,
   docker,
-  ielts,
-  coursera,
-  fpt,
-  help,
+  // meta,
+  // starbucks,
+  // tesla,
+  // shopify,
   carrent,
   jobit,
-  rps,
   tripguide,
   threejs,
-  llfoa,
 } from "../assets";
 
 export const navLinks = [
@@ -128,10 +133,8 @@ const educations = [
     iconBg: "#E6DEDD",
     date: "Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "I have been taking many courses on Coursera to practice and have received many typical certificates from Meta, Google, University of California, University of California, University of Colorado System, Technion - Israel Institute of Technology, and the University of Michigan",
+      "Check the section below for more information about the certificates"
     ],
   },
   {
@@ -171,7 +174,6 @@ const educations = [
     ],
   },
 ];
-
 const testimonials = [
   {
     testimonial:
@@ -198,7 +200,6 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
-
 const projects = [
   {
     name: "AI Image Generator",
