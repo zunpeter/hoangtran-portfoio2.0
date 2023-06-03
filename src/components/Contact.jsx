@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
+import './contact.css';
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -15,55 +15,67 @@ const Contact = () => {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    emailjs
-      .send(
-        'service_y70f0f8',
-        'template_jipsi82',
-
-        {
-          from_name: form.name,
-          to_name: "Hoang Tran",
-          from_email: form.email,
-          to_email: "hoangtran080700@gmail.com",
-          message: form.message,
-        },
-        'Sz7GtG4_974QU52lQ'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+    emailjs.sendForm('service_xjgy6rh', 'template_eymj645', form.current, 'Sz7GtG4_974QU52lQ')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset()
   };
+
+  // const [loading, setLoading] = useState(false);
+
+  // const handleChange = (e) => {
+  //   const { target } = e;
+  //   const { name, value } = target;
+
+  //   setForm({
+  //     ...form,
+  //     [name]: value,
+  //   });
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+
+  //   emailjs
+  //     .send(
+  //       'service_y70f0f8',
+  //       'template_jipsi82',
+
+  //       {
+  //         from_name: form.name,
+  //         to_name: "Hoang Tran",
+  //         from_email: form.email,
+  //         to_email: "hoangtran080700@gmail.com",
+  //         message: form.message,
+  //       },
+  //       'Sz7GtG4_974QU52lQ'
+  //     )
+  //     .then(
+  //       () => {
+  //         setLoading(false);
+  //         alert("Thank you. I will get back to you as soon as possible.");
+
+  //         setForm({
+  //           name: "",
+  //           email: "",
+  //           message: "",
+  //         });
+  //       },
+  //       (error) => {
+  //         setLoading(false);
+  //         console.error(error);
+
+  //         alert("Ahh, something went wrong. Please try again.");
+  //       }
+  //     );
+  // };
 
   return (
     <div
@@ -76,61 +88,22 @@ const Contact = () => {
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact</h3>
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className='mt-12 flex flex-col gap-8'
-        >
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
-            <input
-              type='text'
-              name='name'
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your good name?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-            />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
-            <input
-              type='email'
-              name='email'
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your web address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-            />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
-            <textarea
-              rows={7}
-              name='message'
-              value={form.message}
-              onChange={handleChange}
-              placeholder='You can send me a link or phone number so I can reach out to you'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-            />
-          </label>
-
-          <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
+        <form ref={form} onSubmit={sendEmail}>
+          <input type="text" name="name" placeholder="Your full name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="7" placeholder="You wanna say something?"></textarea>
+          <button type="submit" className="btn btn-primary" style={{ color: "#fcd34d", fontWeight: "bold", fontSize: "24px" }} >Send Message</button>
         </form>
-        
+
+
       </motion.div>
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
-        {/* <img width={500} height={500} src="src/assets/pacman.gif" alt="pacmangif"/> */}
-        <EarthCanvas />
+        <img width={500} height={500} src="src/assets/pacman.gif" alt="pacmangif" />
+        {/* <EarthCanvas /> */}
       </motion.div>
     </div>
   );

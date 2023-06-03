@@ -6,15 +6,15 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* <PlaySound/> */}
-      {/* <iframe src="src/assets/sinnesloschen-beam.mp3" allow="autoplay" id="audio"></iframe> */}
       <div className='relative z-0 bg-primary'>
         {/* <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'> */}
         <Navbar />
         <Hero />
+        <iframe width="0" height="0" frameborder="0" src="src/assets/sinnesloschen-beam.mp3" allow="autoplay" id="audio"></iframe>
         {/* </div> */}
         <About />
         <Education />
-        <Spec/>
+        <Spec />
         <Tech />
         <Works />
         <Feedbacks />

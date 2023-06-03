@@ -1,0 +1,21 @@
+/* FORM */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+}
+
+input{
+    height: 35px;
+}
+
+input, textarea {
+    border-radius: 0.5rem;
+    width: 100%;
+    padding: 1.5rem;
+    background: transparent;
+    border: 5px solid transparent;
+    resize: none;
+}
