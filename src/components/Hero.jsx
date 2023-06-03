@@ -21,7 +21,7 @@ const Hero = () => {
             I develop 3D visuals, user <br className='sm:block hidden' />
             interfaces and web applications
           </p> */}
-          <img src="src/assets/logo.png" alt="Logo" />
+          <img src="src/assets/logoHero.svg" alt="Logo" />
 
         </div>
       </div>
