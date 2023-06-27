@@ -1,0 +1,20 @@
+/* CTA */
+.cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.cta a {
+    color: white;
+    border-color: #a65852;
+    background: #a65852;
+}
+
+.cta a:hover {
+    background: #fbe45b;
+    color: #a65852;
+}
+
+
